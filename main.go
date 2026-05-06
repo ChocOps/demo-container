@@ -51,13 +51,6 @@ func main() {
 	})
 
 	app.Get("/", func(c *fiber.Ctx) error {
-		return c.Status(fiber.StatusOK).JSON(fiber.Map{
-			"service": os.Getenv("SERVICE"),
-			"version": os.Getenv("VERSION"),
-		})
-	})
-
-	app.Get("/motd", func(c *fiber.Ctx) error {
 		var motds []string = []string{
 			"Don't Panic.",
 			"So long, and thanks for all the fish.",
